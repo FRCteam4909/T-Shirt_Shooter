@@ -13,9 +13,14 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends TimedRobot {
 
+  public static DriveTrain driveTrain;
+  public static BionicF310 driveGamepad;
+
+
   @Override
   public void robotInit(){
-
+    driveTrain = new DriveTrain();
+    driveGamepad = new BionicF310(0, 0.2, 0.6);
   }
 
   public void robotPeriodic(){
@@ -31,7 +36,7 @@ public class Robot extends TimedRobot {
   }
 
   public void teleopInit(){
-
+    new DriveTrain();
   }
 
   public void teleopPeriodic(){

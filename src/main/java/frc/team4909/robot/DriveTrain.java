@@ -38,6 +38,6 @@ bionicDrive.arcadeDrive(speed, rotation);
     }
 @Override
 	protected void initDefaultCommand() {
-		
+		setDefaultCommand(new Drive());
     }
 }
