@@ -1,10 +1,7 @@
-package frc.team4909.robot;
+package frc.team4909.robot.drivetrain;
 
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
@@ -18,7 +15,7 @@ public class Drivetrain extends Subsystem {
     SpeedControllerGroup left;
     SpeedControllerGroup right;
 
-    public Drivetrain(){
+    public Drivetrain() {
         f_right = new WPI_TalonSRX(0);
         f_left = new WPI_TalonSRX(1);
 
@@ -39,7 +36,7 @@ public class Drivetrain extends Subsystem {
 
     @Override
     protected void initDefaultCommand() {
-
+        setDefaultCommand(new Drive());
     }
 
 }
