@@ -3,7 +3,7 @@ package frc.team4909.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.team4909.robot.drivetrain.DriveTrain;
+import frc.team4909.robot.drivetrain.Drivetrain;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -13,6 +13,9 @@ import frc.team4909.robot.drivetrain.DriveTrain;
  * project.
  */
 public class Robot extends TimedRobot {
+  public static Drivetrain drivetrain;
+
+  public static BionicF310 driveGamepad;
 
   public static DriveTrain driveTrain;
   public static BionicF310 driveGamepad;
@@ -20,7 +23,8 @@ public class Robot extends TimedRobot {
 
   @Override
   public void robotInit(){
-    driveTrain = new DriveTrain();
+    drivetrain = new Drivetrain();
+
     driveGamepad = new BionicF310(0, 0.2, 0.6);
   }
 
