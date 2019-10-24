@@ -13,40 +13,35 @@ import frc.team4909.robot.drivetrain.Drivetrain;
  * project.
  */
 public class Robot extends TimedRobot {
+
   public static Drivetrain drivetrain;
-
   public static BionicF310 driveGamepad;
-
-  public static DriveTrain driveTrain;
-  public static BionicF310 driveGamepad;
-
 
   @Override
-  public void robotInit(){
+  public void robotInit() {
     drivetrain = new Drivetrain();
 
     driveGamepad = new BionicF310(0, 0.2, 0.6);
   }
 
-  public void robotPeriodic(){
+  public void robotPeriodic() {
 
   }
 
-  public void autonomousInit(){
+  public void autonomousInit() {
 
   }
 
-  public void autonomousPeriodic(){
+  public void autonomousPeriodic() {
 
   }
 
-  public void teleopInit(){
-    new DriveTrain();
+  public void teleopInit() {
+    new Drivetrain();
   }
 
-  public void teleopPeriodic(){
+  public void teleopPeriodic() {
 
   }
 
-  
 }

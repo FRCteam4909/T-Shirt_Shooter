@@ -6,7 +6,8 @@ import frc.team4909.robot.generic.BionicJoystick;
 import frc.team4909.robot.generic.BionicPOV;
 
 /**
- * BionicF310 models the Logitech F310 Gamepad and its buttons for easier mapping for the operator interface.
+ * BionicF310 models the Logitech F310 Gamepad and its buttons for easier
+ * mapping for the operator interface.
  */
 public class BionicF310 extends BionicJoystick {
     public static BionicButton Start = new BionicButton(8);

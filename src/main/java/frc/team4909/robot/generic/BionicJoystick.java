@@ -6,7 +6,6 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.Trigger;
 
-
 /**
  * BionicJoystick abstracts away much of the prior operator interface complexity
  * to reduce the likelihood of confusion in button and axis mapping. All methods
@@ -41,8 +40,8 @@ public class BionicJoystick extends Joystick {
     public double getSensitiveAxis(BionicAxis axis) {
         double axisValue = getThresholdAxis(axis);
 
-//        return (1 - sensitivity) * axisValue + sensitivity * Math.pow(axisValue, 3);
-        return (1 - sensitivity) * axisValue + sensitivity * Math.pow(axisValue, 2)*Math.signum(axisValue);
+        // return (1 - sensitivity) * axisValue + sensitivity * Math.pow(axisValue, 3);
+        return (1 - sensitivity) * axisValue + sensitivity * Math.pow(axisValue, 2) * Math.signum(axisValue);
 
     }
 
@@ -54,7 +53,8 @@ public class BionicJoystick extends Joystick {
 
     /**
      * @param button      Button to Create Handler For
-     * @param commandable Returns a Commandable that can be used by the operator and autonomous CommandGroups
+     * @param commandable Returns a Commandable that can be used by the operator and
+     *                    autonomous CommandGroups
      */
     public void buttonPressed(BionicButton button, Command command) {
         JoystickButton newButton = new JoystickButton(this, button.getNumber());
@@ -65,17 +65,19 @@ public class BionicJoystick extends Joystick {
     /**
      * @param axis        Axis to Create Handler For
      * @param threshold   Minimum Threshold to Trigger Command
-     * @param commandable Returns a Commandable that can be used by the operator and autonomous CommandGroups
+     * @param commandable Returns a Commandable that can be used by the operator and
+     *                    autonomous CommandGroups
      */
     public void buttonPressed(BionicAxis axis, double threshold, Command command) {
         BionicJoystickAxisButton newButton = new BionicJoystickAxisButton(this, axis.getNumber(), threshold);
 
         newButton.whenActive(command);
     }
-    
+
     /**
      * @param button      Button to Create Handler For
-     * @param commandable Returns a Commandable that can be used by the operator and autonomous CommandGroups
+     * @param commandable Returns a Commandable that can be used by the operator and
+     *                    autonomous CommandGroups
      */
     public void buttonHeld(BionicButton button, Command command) {
         JoystickButton newButton = new JoystickButton(this, button.getNumber());
@@ -86,7 +88,8 @@ public class BionicJoystick extends Joystick {
     /**
      * @param axis        Axis to Create Handler For
      * @param threshold   Minimum Threshold to Trigger Command
-     * @param commandable Returns a Commandable that can be used by the operator and autonomous CommandGroups
+     * @param commandable Returns a Commandable that can be used by the operator and
+     *                    autonomous CommandGroups
      */
     public void buttonHeld(BionicAxis axis, double threshold, Command command) {
         BionicJoystickAxisButton newButton = new BionicJoystickAxisButton(this, axis.getNumber(), threshold);
@@ -96,7 +99,8 @@ public class BionicJoystick extends Joystick {
 
     /**
      * @param button      Button to Create Handler For
-     * @param commandable Returns a Commandable that can be used by the operator and autonomous CommandGroups
+     * @param commandable Returns a Commandable that can be used by the operator and
+     *                    autonomous CommandGroups
      */
     public void buttonToggled(BionicButton button, InstantCommand command) {
         JoystickButton newButton = new JoystickButton(this, button.getNumber());
@@ -107,7 +111,8 @@ public class BionicJoystick extends Joystick {
     /**
      * @param axis        Axis to Create Handler For
      * @param threshold   Minimum Threshold to Trigger Command
-     * @param commandable Returns a Commandable that can be used by the operator and autonomous CommandGroups
+     * @param commandable Returns a Commandable that can be used by the operator and
+     *                    autonomous CommandGroups
      */
     public void buttonToggled(BionicAxis axis, double threshold, InstantCommand command) {
         BionicJoystickAxisButton newButton = new BionicJoystickAxisButton(this, axis.getNumber(), threshold);
