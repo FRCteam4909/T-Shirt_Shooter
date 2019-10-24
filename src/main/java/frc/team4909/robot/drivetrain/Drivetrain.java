@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
-public class DriveTrain extends Subsystem {
+public class Drivetrain extends Subsystem {
 
    WPI_TalonSRX f_right;
     WPI_TalonSRX f_left;
@@ -17,7 +17,7 @@ public class DriveTrain extends Subsystem {
     SpeedControllerGroup left;
     SpeedControllerGroup right;
     
-    public DriveTrain(){
+    public Drivetrain(){
 
         f_right = new WPI_TalonSRX(0);
         f_left = new WPI_TalonSRX(1);
