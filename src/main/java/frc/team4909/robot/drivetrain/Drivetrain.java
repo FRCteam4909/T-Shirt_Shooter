@@ -1,6 +1,7 @@
 package frc.team4909.robot.drivetrain;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -8,17 +9,19 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 public class Drivetrain extends Subsystem {
     
     WPI_TalonSRX f_right;
-    WPI_TalonSRX f_left;
-    WPI_TalonSRX b_right;
-    WPI_TalonSRX b_left;
+    WPI_VictorSPX f_left;
+    WPI_VictorSPX b_right;
+    WPI_VictorSPX b_left;
     DifferentialDrive bionicDrive;
     SpeedControllerGroup left;
     SpeedControllerGroup right;
 
     public Drivetrain() {
         f_right = new WPI_TalonSRX(0);
-        f_left = new WPI_TalonSRX(1);
-
+        f_left = new WPI_VictorSPX(1);
+        b_right = new WPI_VictorSPX(2);
+        b_left = new WPI_VictorSPX(3);
+        
         left = new SpeedControllerGroup(f_left,b_left);
 
         right = new SpeedControllerGroup(f_right, b_right);
