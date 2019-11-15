@@ -28,8 +28,9 @@ public class Robot extends TimedRobot {
 
     driveGamepad = new BionicF310(0, 0.2, 0.6);
 
-    driveGamepad.povActive(BionicF310.Top, new RaiseShooter());;
-    driveGamepad.povActive(BionicF310.Bottom, new LowerShooter());;
+    driveGamepad.povActive(BionicF310.Top, new RaiseShooter());
+    driveGamepad.povActive(BionicF310.Bottom, new LowerShooter());
+    //driveGamepad.
   }
 
   public void robotPeriodic(){

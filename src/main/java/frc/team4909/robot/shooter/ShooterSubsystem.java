@@ -16,16 +16,12 @@ public class ShooterSubsystem extends Subsystem{
         solenoid = new Solenoid(1);
     }
 
-    public void fillMain() {
+    public void openValve() {
         solenoid.set(true);
     }
 
-    public void closeMain(){
+    public void closeValve(){
         solenoid.set(false);
-    }
-
-    public double currentPSI(){
-        return 0.0;
     }
 
     public void raiseShooter(){
