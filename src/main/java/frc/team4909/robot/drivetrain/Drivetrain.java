@@ -8,8 +8,8 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 public class Drivetrain extends Subsystem {
     
-    WPI_TalonSRX f_right;
-    WPI_VictorSPX f_left;
+    WPI_TalonSRX f_left;
+    WPI_VictorSPX f_right;
     WPI_VictorSPX b_right;
     WPI_VictorSPX b_left;
     DifferentialDrive bionicDrive;
@@ -17,10 +17,10 @@ public class Drivetrain extends Subsystem {
     SpeedControllerGroup right;
 
     public Drivetrain() {
-        f_right = new WPI_TalonSRX(0);
-        f_left = new WPI_VictorSPX(1);
-        b_right = new WPI_VictorSPX(2);
+        f_left= new WPI_TalonSRX(1);
+        f_right = new WPI_VictorSPX(2);
         b_left = new WPI_VictorSPX(3);
+        b_right = new WPI_VictorSPX(4);
         
         left = new SpeedControllerGroup(f_left,b_left);
 
